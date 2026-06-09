@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang - UNICOF Coffee</title>
+  <link rel="stylesheet" href="cart-page.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+          <img src="images/unicoflogo.png" alt="UNICOF Logo" height="200" width="200">
+          <span></span>
+        </a>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="#" class="nav-link">Promo</a>
+        <a href="#" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-bar">
+          <input type="text" placeholder="Cari menu...">
+          <button class="search-btn">🔍</button>
+        </div>
+        <a href="login.html" class="btn-login">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="cart-container">
+    <div class="breadcrumb">
+      <a href="home.html">Home</a>
+      <span>/</span>
+      <a href="menu.html">Menu</a>
+      <span>/</span>
+      <span class="current">Keranjang Belanja</span>
+    </div>
+
+    <h1 class="page-title">🛒 Keranjang Belanja Anda</h1>
+
+    <div class="cart-wrapper">
+      <!-- Left: Cart Items -->
+      <section class="cart-items-section">
+        <div class="section-header">
+          <h2>Produk dalam Keranjang</h2>
+          <span class="item-count" id="itemCount">0 item</span>
+        </div>
+
+        <!-- Empty Cart Message -->
+        <div class="empty-cart" id="emptyCart" style="display: none;">
+          <div class="empty-icon">☕</div>
+          <h3>Keranjang Anda Kosong</h3>
+          <p>Jelajahi menu kami dan temukan minuman favorit Anda</p>
+          <a href="menu.html" class="btn btn-primary btn-large">Lanjutkan Belanja</a>
+        </div>
+
+        <!-- Cart Items List -->
+        <div class="cart-items" id="cartItems">
+          <!-- Items akan di-render oleh JavaScript -->
+        </div>
+      </section>
+
+      <!-- Right: Order Summary -->
+      <aside class="order-summary-section">
+        <!-- Order Summary Card -->
+        <div class="summary-card">
+          <h3 class="summary-title">Ringkasan Pesanan</h3>
+
+          <!-- Promo Code Section -->
+          <div class="promo-section">
+            <input 
+              type="text" 
+              id="promoCode" 
+              class="promo-input" 
+              placeholder="Masukkan kode promo"
+              maxlength="10"
+            >
+            <button class="btn-apply-promo" onclick="applyPromo()">Terapkan</button>
+          </div>
+
+          <!-- Summary Details -->
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span class="price" id="subtotalPrice">Rp 0</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Biaya Pengiriman</span>
+              <span class="price" id="shippingPrice">Rp 0</span>
+            </div>
+
+            <div class="summary-row" id="discountRow" style="display: none;">
+              <span>Diskon Promo</span>
+              <span class="price discount" id="discountPrice">-Rp 0</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Pajak (10%)</span>
+              <span class="price" id="taxPrice">Rp 0</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-row total">
+              <span>Total Pembayaran</span>
+              <span class="price total-amount" id="totalPrice">Rp 0</span>
+            </div>
+          </div>
+
+          <!-- Delivery Options -->
+          <div class="delivery-section">
+            <h4>Metode Pengiriman</h4>
+            <label class="delivery-option">
+              <input type="radio" name="delivery" value="standard" checked>
+              <span class="option-label">
+                <span class="option-name">Standar (2-3 jam)</span>
+                <span class="option-price">Rp 10.000</span>
+              </span>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery" value="express">
+              <span class="option-label">
+                <span class="option-name">Express (30-45 menit)</span>
+                <span class="option-price">Rp 25.000</span>
+              </span>
+            </label>
+            <label class="delivery-option">
+              <input type="radio" name="delivery" value="pickup">
+              <span class="option-label">
+                <span class="option-name">Ambil di Toko</span>
+                <span class="option-price">Gratis</span>
+              </span>
+            </label>
+          </div>
+
+          <!-- Notes -->
+          <div class="notes-section">
+            <label for="orderNotes">Catatan Pesanan (Opsional)</label>
+            <textarea 
+              id="orderNotes" 
+              class="notes-input" 
+              placeholder="Contoh: Kurangi gula, tanpa es, dll..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <!-- Checkout Button -->
+          <button class="btn btn-checkout btn-large" id="checkoutBtn" onclick="checkout()">
+            Lanjut ke Pembayaran
+          </button>
+
+          <!-- Continue Shopping Button -->
+          <button class="btn btn-secondary btn-large" onclick="window.location.href='menu.html'">
+            ← Lanjutkan Belanja
+          </button>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <div class="badge">🔒 Pembayaran Aman</div>
+            <div class="badge">🚚 Pengiriman Cepat</div>
+            <div class="badge">✨ Kualitas Premium</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>UNICOF</h4>
+        <p>Kopi Premium & Makanan Segar<br>Diantar ke Pintu Anda</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#">Kopi</a></li>
+          <li><a href="#">Non-Kopi</a></li>
+          <li><a href="#">Snack</a></li>
+          <li><a href="#">Promo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Bantuan</h4>
+        <ul>
+          <li><a href="#">Hubungi Kami</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Ikuti Kami</h4>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 UNICOF Coffee. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Scripts -->
+  <script src="js/cart-manager.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>

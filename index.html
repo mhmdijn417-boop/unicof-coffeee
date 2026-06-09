@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicof - Premium Coffee & Snack Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="cart-manager.js" defer></script>
+  <script src="product-manager.js" defer></script>
+  <script src="analytics.js" defer></script>
+  <script src="performance.js" defer></script>
+  <script src="user-behavior.js" defer></script>
+  <script src="notification-system.js" defer></script>
+  <script src="seo-optimizer.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Banner - Promotional -->
+  <div class="top-banner">
+    <div class="banner-container">
+      <div class="banner-slide">
+        <div class="slide" style="background: linear-gradient(135deg, #2c1810 0%, #3d2817 100%);">
+          <div class="slide-content">
+            <p class="slide-text">☕ Kopi Premium Specialty Grade</p>
+          </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);">
+          <div class="slide-content">
+            <p class="slide-text">🎉 Gratis Ongkir untuk Pembelian Pertama!</p>
+          </div>
+        </div>
+        <div class="slide" style="background: linear-gradient(135deg, #3d2817 0%, #2c1810 100%);">
+          <div class="slide-content">
+            <p class="slide-text">⭐ Download Aplikasi & Dapatkan Voucher Rp50.000</p>
+          </div>
+        </div>
+      </div>
+      <button class="banner-btn prev-btn" onclick="prevSlide()">❮</button>
+      <button class="banner-btn next-btn" onclick="nextSlide()">❯</button>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <div class="logo-icon"></div>
+        <img src="images/unicoflogo.png" alt="Unicof Logo" height="160">
+        <div class="logo-text">
+          <h1>UNICOF</h1>
+          <p>Premium Coffee Experience</p>
+        </div>
+      </div>
+      
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#promo" class="nav-link">Promo</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-icons">
+        <div class="search-bar">
+          <input type="text" placeholder="Cari menu...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-bag"></i>
+        <span></span>
+        <span class="cart-count">0</span>
+      </a>
+
+        <a href="login.html" class="auth-btn">Login</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">☕ SPECIALTY COFFEE</div>
+        <h1 class="hero-title">
+          Kopi Artisan<br>
+          <span class="gradient-text">Dimulai dari Sini</span>
+        </h1>
+        <p class="hero-subtitle">Nikmati pengalaman kopi premium dengan biji pilihan dari berbagai belahan dunia</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> Pesan Sekarang
+          </button>
+          <button class="btn btn-secondary">
+            <i class="fas fa-play-circle"></i> Lihat Demo
+          </button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="coffee-cup">
+          <div class="cup-content">
+            <div class="cup-liquid"></div>
+            <div class="cup-foam"></div>
+          </div>
+          <div class="cup-steam">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Pesan & Selesai</h3>
+        <p>Proses order cepat hanya dalam 5 menit</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Kopi Segar</h3>
+        <p>Dibuat saat itu juga, tidak pernah simpan lama</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Pengiriman Kilat</h3>
+        <p>Pesanan sampai dalam 30 menit atau gratis</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <h3>Premium Quality</h3>
+        <p>Kopi specialty grade dengan standar internasional</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories" id="menu">
+    <div class="section-header">
+      <h2>Kategori Menu</h2>
+      <p>Pilih kategori favorit Anda</p>
+    </div>
+    
+    <div class="category-grid">
+      <div class="category-card" data-category="coffee">
+        <div class="category-icon">☕</div>
+        <img src="images/coffee.png" alt="coffee Logo" height="250" weight =200>
+        <h3>Kopi Specialty</h3>
+        <p>12 Produk</p>
+        <div class="category-bg"></div>
+      </div>
+      <div class="category-card" data-category="non-coffee">
+        <div class="category-icon">🥤</div>
+        <img src="images/nonn_coffee.png" alt="coffee Logo" height="250" weight =200>
+        <h3>Non-Kopi</h3>
+        
+        <p>8 Produk</p>
+        <div class="category-bg"></div>
+      </div>
+      <div class="category-card" data-category="snack">
+        <div class="category-icon">🍰</div>
+        <img src="images/pastry.png" alt="coffee Logo" height="250" weight =200>
+        <h3>Snack & Pastry</h3>
+        <p>15 Produk</p>
+        <div class="category-bg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section">
+    <div class="section-header">
+      <h2>Menu Pilihan</h2>
+      <p>Rasakan kelezatan cita rasa premium</p>
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="coffee">☕ Kopi</button>
+      <button class="filter-btn" data-filter="non-coffee">🥤 Non-Kopi</button>
+      <button class="filter-btn" data-filter="snack">🍰 Snack</button>
+    </div>
+
+    <div class="menu-grid">
+      <!-- COFFEE SECTION -->
+      <div class="menu-card" data-category="coffee">
+        <img src="images/americano.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #6B4423, #8B5A3C);">
+          <div class="menu-badge">Bestseller</div>
+          <span class="price-tag">Rp 28.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Espresso</h3>
+          <p>Single shot kopi specialty grade</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.8 (256 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Espresso', 28000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <img src="images/kopi_latte.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #8B6F47, #A0826D);">
+          <div class="menu-badge">Favorit</div>
+          <span class="price-tag">Rp 35.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Cappuccino</h3>
+          <p>Espresso dengan susu premium</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.9 (342 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Cappuccino', 35000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <img src="images/kopi_latte.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #9B8B7E, #B8A99A);">
+          <span class="price-tag">Rp 32.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Latte Arabika</h3>
+          <p>Arabika premium dengan latte art</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.7 (198 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Latte Arabika', 32000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <img src="images/americano.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #5D4037, #795548);">
+          <span class="price-tag">Rp 30.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Americano</h3>
+          <p>Espresso + air panas, rasa bersih</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.6 (287 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Americano', 30000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <img src="images/kopi_latte.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #8D6E63, #A1887F);">
+          <span class="price-tag">Rp 38.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Flat White</h3>
+          <p>Microfoam latte dari Australia</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.8 (165 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Flat White', 38000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="coffee">
+        <img src="images/aren_latte.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #6D4C41, #8D6E63);">
+          <span class="price-tag">Rp 42.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Macchiato</h3>
+          <p>Espresso dengan tetes susu panas</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.7 (142 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Macchiato', 42000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <!-- NON-COFFEE SECTION -->
+      <div class="menu-card" data-category="non-coffee">
+        <img src="images/matcha.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #00897B, #00BCD4);">
+          <div class="menu-badge">Hits</div>
+          <span class="price-tag">Rp 26.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Matcha Latte</h3>
+          <p>Matcha premium Jepang + susu</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.9 (421 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Matcha Latte', 26000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="non-coffee">
+        <img src="images/teh.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #FF6F00, #FFA726);">
+          <span class="price-tag">Rp 24.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Iced Tea Jasmine</h3>
+          <p>Teh melati segar dengan es</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.5 (203 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Iced Tea Jasmine', 24000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="non-coffee">
+        <img src="images/strauberry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #D32F2F, #FF7043);">
+          <span class="price-tag">Rp 28.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Strawberry Smoothie</h3>
+          <p>Strawberry segar + yogurt</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.7 (315 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Strawberry Smoothie', 28000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="non-coffee">
+        <img src="images/strauberry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #7B1FA2, #BA68C8);">
+          <span class="price-tag">Rp 30.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Taro Latte</h3>
+          <p>Taro premium + susu cokelat</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.8 (287 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Taro Latte', 30000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <!-- SNACK SECTION -->
+      <div class="menu-card" data-category="snack">
+        <img src="images/pastry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #F57F17, #FBC02D);">
+          <div class="menu-badge">Baru</div>
+          <span class="price-tag">Rp 18.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Butter Croissant</h3>
+          <p>Croissant renyah butter premium</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.9 (198 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Butter Croissant', 18000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="snack">
+        <img src="images/pastry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #8B4513, #A0522D);">
+          <span class="price-tag">Rp 22.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Chocolate Brownie</h3>
+          <p>Brownies cokelat lumer</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.8 (156 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Chocolate Brownie', 22000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="snack">
+        <img src="images/pastry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #EC407A, #F06292);">
+          <span class="price-tag">Rp 16.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Strawberry Cheesecake</h3>
+          <p>Cheesecake strawberry segar</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.7 (234 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Strawberry Cheesecake', 16000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="snack">
+        <img src="images/kopi_latte.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #FFB300, #FFC107);">
+          <span class="price-tag">Rp 14.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Cookies & Cream</h3>
+          <p>Cookies premium + krim</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.6 (189 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Cookies & Cream', 14000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="snack">
+        <img src="images/tiramisu.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #558B2F, #7CB342);">
+          <span class="price-tag">Rp 20.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Matcha Tiramisu</h3>
+          <p>Tiramisu matcha istimewa</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.9 (267 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Matcha Tiramisu', 20000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="snack">
+        <img src="images/pastry.png" alt="coffee Logo" height="250" width =350>
+        <div class="menu-image" style="background: linear-gradient(135deg, #D84315, #FF5722);">
+          <span class="price-tag">Rp 19.000</span>
+        </div>
+        <div class="menu-info">
+          <h3>Choco Chip Muffin</h3>
+          <p>Muffin cokelat dengan chips</p>
+          <div class="menu-rating">
+            <i class="fas fa-star"></i> 4.8 (145 ulasan)
+          </div>
+          <button class="add-to-cart" onclick="addToCart('Choco Chip Muffin', 19000)">
+            <i class="fas fa-plus"></i> Tambah
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section class="promo" id="promo">
+    <div class="section-header">
+      <h2>Penawaran Spesial</h2>
+      <p>Dapatkan diskon hingga 50% untuk pelanggan setia</p>
+    </div>
+
+    <div class="promo-grid">
+      <div class="promo-card large">
+        <div class="promo-content">
+          <h3>Member Bonus</h3>
+          <p>Setiap pembelian Rp 100.000 gratis 1 kopi pilihan</p>
+          <button class="btn btn-secondary">Daftar Member</button>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-tag">50% OFF</div>
+        <h4>Kopi Specialty</h4>
+        <p>Setiap hari Senin</p>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-tag">Gratis Ongkir</div>
+        <h4>Min. Rp 50.000</h4>
+        <p>Khusus area Bandung</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat-card">
+      <h3>15K+</h3>
+      <p>Customer Setia</p>
+    </div>
+    <div class="stat-card">
+      <h3>50K+</h3>
+      <p>Order Terselesaikan</p>
+    </div>
+    <div class="stat-card">
+      <h3>4.8★</h3>
+      <p>Rating Kepuasan</p>
+    </div>
+    <div class="stat-card">
+      <h3>24/7</h3>
+      <p>Layanan Customer</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <h2>Hubungi Kami</h2>
+      <p>Kami siap melayani Anda dengan sepenuh hati</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h4>Lokasi</h4>
+        <p>Jl. Cipaganti No. 157, Bandung</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h4>Telepon</h4>
+        <p>+62 274-1234567</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h4>Email</h4>
+        <p>hello@unicof.com</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">⏰</div>
+        <h4>Jam Operasional</h4>
+        <p>Senin - Minggu: 07:00 - 22:00</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h5>Tentang Unicof</h5>
+        <ul>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h5>Layanan</h5>
+        <ul>
+          <li><a href="#">Delivery</a></li>
+          <li><a href="#">Membership</a></li>
+          <li><a href="#">Kemitraan</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h5>Kebijakan</h5>
+        <ul>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Privasi</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h5>Ikuti Kami</h5>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Unicof. All Rights Reserved.</p>
+      <div class="payment-methods">
+        <span>💳 Transfer Bank</span>
+        <span>📱 E-Wallet</span>
+        <span>🏪 COD</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Keranjang Belanja</h2>
+        <button class="close-btn" onclick="closeCart()">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Keranjang Anda kosong</p>
+      </div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span id="subtotal">Rp 0</span>
+        </div>
+        <div class="summary-row">
+          <span>Ongkir:</span>
+          <span id="shipping">Rp 0</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span id="total">Rp 0</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
